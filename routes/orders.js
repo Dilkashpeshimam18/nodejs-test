@@ -4,6 +4,6 @@ const router = express.Router()
 
 router.get('/get-orders', ordersController.getOrders)
 router.post('/add-order', ordersController.addOrders)
-router.delete('/delete-order', ordersController.deleteOrders)
+router.delete('/delete-order/:id', ordersController.deleteOrders)
 
 module.exports = router;

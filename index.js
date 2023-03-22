@@ -35,7 +35,12 @@ addOrder.addEventListener('click', async (e) => {
 })
 
 
-window.addEventListener('DOMContentLoaded', async () => {
+window.addEventListener('DOMContentLoaded', () => {
+    getOrders()
+})
+
+
+async function getOrders() {
     try {
         const orders = await axios.get('http://localhost:4000/get-orders')
         const result = orders.data.allOrders
@@ -45,8 +50,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     } catch (err) {
         console.log(err)
     }
-})
-
+}
 
 function displayOrder(ordersObj) {
     if (ordersObj.table == 'Table1') {
@@ -63,4 +67,17 @@ function displayOrder(ordersObj) {
         tableList.innerHTML = tableList.innerHTML + tableTag
     }
 
+}
+
+
+const deleteOrder = async (id) => {
+
+    try {
+        const res = await axios.delete(`http://localhost:4000/delete-order/${id}`)
+
+        window.location.reload()
+
+    } catch (err) {
+        console.log(err)
+    }
 }

@@ -27,6 +27,14 @@ exports.getOrders = async (req, res) => {
     }
 }
 
-exports.deleteOrders = (req, res) => {
+exports.deleteOrders = async (req, res) => {
+    try {
+        const id = req.params.id
 
+        await Orders.destroy({ where: { id: id } })
+        res.status(201).json({ data: 'Order Deleted!!' })
+
+    } catch (err) {
+        console.log(err)
+    }
 }
