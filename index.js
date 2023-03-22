@@ -29,3 +29,13 @@ addOrder.addEventListener('click', async (e) => {
 
     }
 })
+
+
+window.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const orders = await axios.get('http://localhost:4000/get-orders')
+        console.log(orders)
+    } catch (err) {
+        console.log(err)
+    }
+})
