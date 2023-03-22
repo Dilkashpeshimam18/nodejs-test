@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Restaurant Ordering App</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="container">
+    <div class="expense-body">
+        <h2>Restaurant Ordering App</h2>
+        <form class="form-container">
+            <div class="allInput">
+                <div class="form-input">
+                    <h5>Choose price:</h4>
+                        <input placeholder="Enter price..." type="number" name='price' id="price" class="dish-price">
+                </div>
+                <div class="form-input">
+                    <h5>Choose dish</h4>
+                        <input placeholder="Enter dish.." type="text" id="dish" name='dish' class="dish-name">
+                </div>
+                <div class="form-input">
+                    <h5>Choose Table</h4>
+                        <select class="select-table" id="table">
+                            <option value="Table1">Table 1</option>
+                            <option value="Table2">Table 2</option>
+                            <option value="Table3">Table 3</option>
+                        </select>
+
+                </div>
+            </div>
+
+            <div class="form-input">
+                <input style="background-color:lightblue ; color:white; border:none" class="btn" type="submit" id="button"
+                    value="Add Orders">
+
+            </div>
+
+        </form>
+        <h2>Orders</h2>
+        <div>
+            <h3>Table 1</h3>
+            <ul id="list1" class="table1-list">
+
+            </ul>
+        </div>
+        <div>
+            <h3>Table 2</h3>
+
+            <ul id="list2" class="table2-list">
+
+            </ul>
+        </div>
+        <div>
+            <h3>Table 3</h3>
+
+            <ul id="list3" class="table3-list">
+
+            </ul>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>
